@@ -1,6 +1,7 @@
 package io.github.spacialcircumstances.jarpacker
 
 import javafx.beans.property.SimpleStringProperty
+import javafx.stage.FileChooser
 import tornadofx.*
 
 class MainView: View() {
@@ -14,7 +15,7 @@ class MainView: View() {
             button {
                 text = "Add"
                 action {
-                    val file = chooseFile("Add files to jar file", filters = emptyArray(), mode = FileChooserMode.Multi)
+                    val file = chooseFile("Add files to JAR file", filters = emptyArray(), mode = FileChooserMode.Multi)
                     controller.addFiles(file)
                 }
             }
@@ -27,6 +28,25 @@ class MainView: View() {
                     if (selected != null) {
                         controller.removeFile(selected)
                     }
+                }
+            }
+        }
+        hbox {
+            textfield(controller.outFile) {
+
+            }
+            button {
+                text = "Open"
+                action {
+                    val saveFile = chooseFile("JAR file destination", filters = arrayOf(FileChooser.ExtensionFilter("JAR", "jar")), mode = FileChooserMode.Save)
+                    controller.outFile.set(saveFile.single().path)
+                }
+            }
+
+            button {
+                text = "Create JAR"
+                action {
+
                 }
             }
         }
