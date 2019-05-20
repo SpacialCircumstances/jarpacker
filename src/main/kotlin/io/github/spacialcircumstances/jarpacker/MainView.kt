@@ -6,6 +6,7 @@ import tornadofx.*
 class MainView: View() {
     val controller: MainController by inject()
     val selectedFile = SimpleStringProperty()
+    val filesSelected = controller.files.sizeProperty.eq(0)
 
     override val root = vbox {
         listview(controller.files).bindSelected(selectedFile)
@@ -19,6 +20,7 @@ class MainView: View() {
             }
 
             button {
+                disableProperty().bind(filesSelected)
                 text = "Remove"
                 action {
                     val selected = selectedFile.get()
