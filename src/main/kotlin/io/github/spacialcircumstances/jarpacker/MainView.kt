@@ -45,6 +45,7 @@ class MainView: View() {
 
             button {
                 text = "Create JAR"
+                disableProperty().bind(controller.outFile.isEmpty.or(filesSelected))
                 action {
 
                 }
