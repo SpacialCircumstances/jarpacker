@@ -32,6 +32,7 @@ class MainView: View() {
             }
         }
         hbox {
+            label("Ausgabedatei:")
             textfield(controller.outFile) {
 
             }
