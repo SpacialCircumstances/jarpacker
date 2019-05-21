@@ -54,6 +54,8 @@ class MainView: View() {
                         confirm("Overwrite JAR file?", "File ${controller.outFile} already exists", actionFn = {
                             controller.createJar()
                         })
+                    } else {
+                        controller.createJar()
                     }
                 }
             }
