@@ -41,7 +41,7 @@ class MainView: View() {
             button {
                 text = "Open"
                 action {
-                    val saveFile = chooseFile("JAR file destination", filters = arrayOf(FileChooser.ExtensionFilter("JAR", "jar")), mode = FileChooserMode.Save)
+                    val saveFile = chooseFile("JAR file destination", filters = arrayOf(FileChooser.ExtensionFilter("JAR", ".jar")), mode = FileChooserMode.Save)
                     controller.outFile.set(saveFile.single().path)
                 }
             }
