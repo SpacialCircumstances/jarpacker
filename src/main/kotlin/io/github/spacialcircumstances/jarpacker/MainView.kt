@@ -3,6 +3,8 @@ package io.github.spacialcircumstances.jarpacker
 import javafx.beans.property.SimpleStringProperty
 import javafx.stage.FileChooser
 import tornadofx.*
+import java.nio.file.Files
+import java.nio.file.Paths
 
 class MainView: View() {
     val controller: MainController by inject()
@@ -48,7 +50,11 @@ class MainView: View() {
                 text = "Create JAR"
                 disableProperty().bind(controller.outFile.isEmpty.or(filesSelected))
                 action {
-
+                    if (Files.exists(Paths.get(controller.outFile.get()))) {
+                        confirm("Overwrite JAR file?", "File ${controller.outFile} already exists", actionFn = {
+                            controller.createJar()
+                        })
+                    }
                 }
             }
         }

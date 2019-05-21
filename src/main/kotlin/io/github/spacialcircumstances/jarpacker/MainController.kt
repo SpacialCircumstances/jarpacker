@@ -22,4 +22,10 @@ class MainController: Controller() {
     fun removeFile(filename: String) {
         files.remove(filename)
     }
+
+    fun createJar() {
+        logText.set("")
+        val output = buildJar(files.toList().map(::File), File(outFile.get()))
+        logText.set(output)
+    }
 }
