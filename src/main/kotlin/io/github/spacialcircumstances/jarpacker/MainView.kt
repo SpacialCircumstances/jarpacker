@@ -51,5 +51,8 @@ class MainView: View() {
                 }
             }
         }
+        textarea(controller.logText) {
+            isEditable = false
+        }
     }
 }
