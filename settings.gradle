@@ -1,10 +1,4 @@
-pluginManagement {
-    resolutionStrategy {
-    }
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-    }
-}
+rootProject.name = 'jarpacker'
+rootProject.name = 'jarpacker'
 rootProject.name = 'jarpacker'
 
