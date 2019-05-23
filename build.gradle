@@ -47,7 +47,7 @@ jfx {
 
     identifier = null
     vendor = "SpacialCircumstances"
-    nativeOutputDir = "build/jfx/native"
+    nativeOutputDir = "$buildDir/jfx/native"
     bundler = "ALL"
     nativeReleaseVersion = "0.1.0"
     needShortcut = false
