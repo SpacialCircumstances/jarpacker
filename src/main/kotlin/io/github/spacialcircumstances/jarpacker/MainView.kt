@@ -34,7 +34,7 @@ class MainView: View("JAR packer") {
             }
         }
         hbox {
-            label("Ausgabedatei:")
+            label("Output file:")
             textfield(controller.outFile) {
 
             }
