@@ -6,7 +6,7 @@ import tornadofx.*
 import java.nio.file.Files
 import java.nio.file.Paths
 
-class MainView: View() {
+class MainView: View("JAR packer") {
     val controller: MainController by inject()
     val selectedFile = SimpleStringProperty()
     val filesSelected = controller.files.sizeProperty.eq(0)
