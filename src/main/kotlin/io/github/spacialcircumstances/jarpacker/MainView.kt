@@ -42,7 +42,7 @@ class MainView: View("JAR packer") {
                 text = "Open"
                 action {
                     val saveFile = chooseFile("JAR file destination", filters = arrayOf(FileChooser.ExtensionFilter("JAR", ".jar")), mode = FileChooserMode.Save)
-                    controller.outFile.set(saveFile.single().path)
+                    controller.outFile.set(saveFile.singleOrNull()?.path ?: "")
                 }
             }
 
