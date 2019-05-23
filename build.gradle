@@ -44,4 +44,19 @@ jfx {
     deployDir = "src/main/deploy"
     useEnvironmentRelativeExecutables = true
     libFolderName = "lib"
+
+    identifier = null
+    vendor = "SpacialCircumstances"
+    nativeOutputDir = "build/jfx/native"
+    bundler = "ALL"
+    nativeReleaseVersion = "0.1.0"
+    needShortcut = false
+    needMenu = false
+    appName = "jarpacker"
+    noBlobSigning = false
+    failOnError = false
+    onlyCustomBundlers = false
+    skipJNLP = false
+    skipNativeVersionNumberSanitizing = false
+    skipMainClassScanning = false
 }
