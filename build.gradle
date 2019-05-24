@@ -39,7 +39,7 @@ compileTestKotlin {
 jfx {
     verbose = true
     mainClass = "io.github.spacialcircumstances.jarpacker.MainKt"
-    jfxAppOutputDir = "build/jfx/app"
+    jfxAppOutputDir = "$buildDir/jfx/app"
     jfxMainAppJarName = "jarpacker.jar"
     deployDir = "src/main/deploy"
     useEnvironmentRelativeExecutables = true
@@ -60,3 +60,13 @@ jfx {
     skipNativeVersionNumberSanitizing = false
     skipMainClassScanning = false
 }
+
+task distributionWindows(type: Zip) {
+    archiveFileName = "jarpacker_windows.zip"
+    destinationDirectory = file("$buildDir/jfx/dist")
+    from "$buildDir/jfx/native/jarpacker"
+    from "$projectDir/README.md"
+    from "$projectDir/LICENSE.md"
+}
+
+distributionWindows.dependsOn(jfxNative)
